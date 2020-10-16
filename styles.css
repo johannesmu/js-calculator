@@ -1,0 +1,93 @@
+:root {
+  --grid-gap: 0.5em;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  display: grid;
+  place-items: center;
+}
+
+#calculator {
+  font-size: 2em;
+  max-width: 800px;
+  min-height: 4em;
+  margin: auto;
+}
+
+#output {
+  font-size: inherit;
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  margin: 0.5em 0;
+  min-width: 100%;
+  box-sizing: border-box;
+  background-color: #eee;
+}
+
+.button {
+  font-size: inherit;
+  padding: 0.2em;
+  border: 2px solid #333;
+  border-radius: 0.1em;
+}
+
+.button:focus {
+  outline: none;
+  border-color: red;
+}
+
+.calculator-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, auto);
+  grid-gap: var(--grid-gap);
+}
+
+.operator {
+  background-color: #333;
+  color: white;
+}
+
+.functions {
+  grid-row: 1 / span 1;
+  grid-column: 1 / span 3;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  grid-gap: var(--grid-gap);
+}
+
+.function {
+  $bgcolor: orange;
+  background-color: orange;
+}
+.function:focus {
+  background-color: darken($bgcolor, 5%);
+}
+    
+
+.numbers {
+  grid-row: 2 / span 4;
+  grid-column: 1 / span 3;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-gap: var(--grid-gap);
+}
+
+.number {
+  font-size: inherit;
+}
+.number:focus {
+  background-color: #dddddd;
+}
+
+.operators {
+  grid-column: 4 / span 1;
+  grid-row: 1 / span 5;
+  display: grid;
+  grid-template-column: 1fr;
+  grid-template-rows: repeat(5, 1fr);
+  grid-gap: var(--grid-gap);
+}
